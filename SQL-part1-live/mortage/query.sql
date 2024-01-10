@@ -26,6 +26,8 @@ FROM sales AS s
 FULL OUTER JOIN mortgage AS m ON s.mortgage_id = m.mortgage_id;
 
 
+
+
 -- Perform a CROSS JOIN and return all columns
 
 
