@@ -1,24 +1,29 @@
--- Query all records from sales table
+SELECT * FROM mortgage;
+SELECT * FROM sales;
 
+SELECT DISTINCT mortgage_id FROM sales;
+SELECT DISTINCT mortgage_id FROM mortgage;
 
--- Query all records from mortgage table
+SELECT s.sales_id, s.payment_id, s.mortgage_id, s.loan_amount, s.loan_date,
+m.mortgage_id, m.mortgage_name, m.mortgage_rate
+FROM sales AS s
+INNER JOIN mortgage AS m ON s.mortgage_id = m.mortgage_id;
+- 1,2,3,4 common elements
 
+SELECT s.sales_id, s.payment_id, s.mortgage_id, s.loan_amount, s.loan_date,
+m.mortgage_id, m.mortgage_name, m.mortgage_rate
+FROM sales AS s
+LEFT JOIN mortgage AS m ON s.mortgage_id = m.mortgage_id;
 
+SELECT s.sales_id, s.payment_id, s.mortgage_id, s.loan_amount, s.loan_date,
+m.mortgage_id, m.mortgage_name, m.mortgage_rate
+FROM sales AS s
+RIGHT JOIN mortgage AS m ON s.mortgage_id = m.mortgage_id;
 
--- Perform an INNER JOIN on the two tables
-
-
--- Perform an INNER JOIN on the two tables with aliasing
-
-
--- Perform an INNER JOIN and return all columns
-
--- Perform a LEFT JOIN and return all columns
-
--- Perform a RIGHT JOIN and return all columns
-
-
--- Perform a FULL OUTER JOIN and return all columns
+SELECT s.sales_id, s.payment_id, s.mortgage_id, s.loan_amount, s.loan_date,
+m.mortgage_id, m.mortgage_name, m.mortgage_rate
+FROM sales AS s
+FULL OUTER JOIN mortgage AS m ON s.mortgage_id = m.mortgage_id;
 
 
 -- Perform a CROSS JOIN and return all columns
