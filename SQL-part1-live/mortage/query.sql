@@ -25,6 +25,7 @@ m.mortgage_id, m.mortgage_name, m.mortgage_rate
 FROM sales AS s
 FULL OUTER JOIN mortgage AS m ON s.mortgage_id = m.mortgage_id;
 
+---
 
 
 
